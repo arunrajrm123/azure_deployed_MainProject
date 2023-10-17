@@ -73,8 +73,10 @@ WSGI_APPLICATION = 'gymmersacademy.wsgi.application'
         #'NAME': BASE_DIR / 'db.sqlite3',
    # }
 #}
-c_s=os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
-p_m={pair.split("="):pair.split("=")[1] for pair in c_s.split(" ")}
+c_s = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
+pairs = [pair.split("=") for pair in c_s.split(" ")]
+p_m = {pair[0]: pair[1] for pair in pairs}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
