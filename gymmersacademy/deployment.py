@@ -73,14 +73,15 @@ WSGI_APPLICATION = 'gymmersacademy.wsgi.application'
         #'NAME': BASE_DIR / 'db.sqlite3',
    # }
 #}
-hostname = os.environ['DBHOST']
+c_s=os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
+p_m={pair.split("="):pair.split("=")[1] for pair in c_s.split(" ")}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['DBNAME'],
-        'HOST': hostname + ".postgres.database.azure.com",
-        'USER': os.environ['DBUSER'],
-        'PASSWORD': os.environ['DBPASS'] 
+        'NAME': p_m["dbname"],
+        'HOST': p_m['host'],
+        'USER': p_m["user"],
+        'PASSWORD':p_m["password"] ,
     }
 }
 
