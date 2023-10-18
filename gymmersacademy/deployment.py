@@ -80,11 +80,11 @@ p_m = {pair[0]: pair[1] for pair in pairs}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': p_m["dbname"],
-        'HOST': p_m['host'],
-        'USER': p_m["user"],
-        'PASSWORD':p_m["password"] ,
-        "OPTIONS":{"sslmode":"required"}
+        'NAME':"postgres",
+        'HOST':"fitness.postgres.database.azure.com",
+        'USER':" arunraj",
+        'PASSWORD':"Root@postgres" ,
+        
     }
 }
 
