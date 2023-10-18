@@ -84,6 +84,7 @@ DATABASES = {
         'HOST': p_m['host'],
         'USER': p_m["user"],
         'PASSWORD':p_m["password"] ,
+        "OPTIONS":{"sslmode":"required"}
     }
 }
 
