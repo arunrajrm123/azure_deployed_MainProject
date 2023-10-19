@@ -205,5 +205,5 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'arunrajenaran@gmail.com'
 EMAIL_HOST_PASSWORD = 'rolxqapguiymlqcc'
-DEBUG = True  # Add this line for debugging
-ALLOWED_HOSTS=[]
+
+
