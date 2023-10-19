@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-*2wv8%z+kkc4wblws$lksr%z_oc5k%5)4lwcw0$^)7=_$d1=ki
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -55,6 +55,7 @@ MIDDLEWARE = [
 
 
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -90,8 +91,12 @@ WSGI_APPLICATION = 'gymmersacademy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':"azuredjangofitness-database" ,
+        "HOST":"azuredjangofitness-server.postgres.database.azure.com",
+        "USER":"yolcmsbvoz",
+        "PASSWORD":"2W8OL26B5M0JMSQ2$",
+
     }
 }
 
